@@ -3,7 +3,6 @@ import Checkbox from "./Checkbox";
 import { Catalogues } from "./mock";
 import { Catalogues1 } from "./mock";
 import './App.css';
-var options = [{ name: "all", id: 1, nm: "Apply to all items in collection", value: "appied_to" + ":" + "all" }, { name: "some", id: 2, nm: "Apply to specific items", value: "applied_to:some" }];
 const CheckedAll = () => {
     const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheckAll1, setIsCheckAll1] = useState(false);
@@ -69,9 +68,6 @@ const CheckedAll = () => {
         var nv = { applied_to, name, rate }
         var names = JSON.stringify(nv, null, 4)
         var aplicable_aitems = { isCheck1, isCheck }
-        var x = JSON.stringify(isCheck, ["KEY"]);
-        var y = JSON.stringify(isCheck1, null, 4, ["KEY"]);
-        var aplicable_aitems = JSON.stringify(JSON.parse(x).concat(JSON.parse(y)), null, 4);
         alert("aplicable_aitems:" + aplicable_aitems + "," + names)
     }
     const catalog = list.map(({ id, name }) => {
