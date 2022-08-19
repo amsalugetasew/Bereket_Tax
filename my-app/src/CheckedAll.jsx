@@ -11,6 +11,7 @@ const CheckedAll = () => {
     const [list, setList] = useState([]);
     const [secList, setSecList] = useState([]);
     const [items, setItems] = React.useState('all');
+    const [count, setCount] = useState(0);
     const [data, setData] = useState({
         name: "",
         tax: '',
@@ -47,6 +48,9 @@ const CheckedAll = () => {
         if (!checked) {
             setIsCheck(isCheck.filter(item => item !== id));
         }
+        else(
+            setCount(count + 1)
+        )
     };
 
     const handleClick1 = e => {
@@ -55,6 +59,9 @@ const CheckedAll = () => {
         if (!checked) {
             setIsCheck1(isCheck1.filter(item => item !== id));
         }
+        else(
+            setCount(count + 1)
+        )
     };
     const changeName = ({ currentTarget: input }) => {
         setData({ ...data, [input.name]: input.value });
@@ -66,11 +73,9 @@ const CheckedAll = () => {
         var applied_to = items
         rate = rate / 100;
         var nv = { applied_to, name, rate }
-        var names = JSON.stringify(nv, null, 4)
-        var aplicable_aitems = { isCheck1, isCheck }
-        aplicable_aitems=JSON.stringify(aplicable_aitems, null, 4)
-        alert(JSON.stringify(isCheck,null,4,['KEY'])+JSON.stringify(isCheck1,null,4,['KEY']))
-        alert("aplicable_aitems:" + aplicable_aitems+ "," + names)
+        var arr3 = isCheck1.concat(isCheck);
+        var arr4 =arr3.concat(nv)
+        alert("aplicable_aitems:" +JSON.stringify(arr4,null,4))
     }
     const catalog = list.map(({ id, name }) => {
         return (
