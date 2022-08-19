@@ -68,9 +68,9 @@ const CheckedAll = () => {
         var nv = { applied_to, name, rate }
         var names = JSON.stringify(nv, null, 4)
         var aplicable_aitems = { isCheck1, isCheck }
-        aplicable_aitems=JSON.stringify(aplicable_aitems, null, 4 ,['KEY'])
-        console.log(aplicable_aitems)
-        alert("aplicable_aitems:" + aplicable_aitems + "," + names)
+        aplicable_aitems=JSON.stringify(aplicable_aitems, null, 4)
+        alert(JSON.stringify(isCheck,null,4,['KEY'])+JSON.stringify(isCheck1,null,4,['KEY']))
+        alert("aplicable_aitems:" + aplicable_aitems+ "," + names)
     }
     const catalog = list.map(({ id, name }) => {
         return (
