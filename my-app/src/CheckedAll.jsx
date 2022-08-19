@@ -47,6 +47,7 @@ const CheckedAll = () => {
         setIsCheck([...isCheck, id]);
         if (!checked) {
             setIsCheck(isCheck.filter(item => item !== id));
+            setCount(count + 0)
         }
         else(
             setCount(count + 1)
@@ -58,6 +59,7 @@ const CheckedAll = () => {
         setIsCheck1([...isCheck1, id]);
         if (!checked) {
             setIsCheck1(isCheck1.filter(item => item !== id));
+            setCount(count + 0)
         }
         else(
             setCount(count + 1)
@@ -199,7 +201,7 @@ const CheckedAll = () => {
                 {catalog1}
                 </div>
                 <div className='button'>
-                    <input type="submit" value='Apply tax to x item(s)' />
+                    <input type="submit" value={`Apply tax to ${count} item(s)`} />
                 </div>
             </form>
         </div>
