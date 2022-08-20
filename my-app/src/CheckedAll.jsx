@@ -31,7 +31,9 @@ const CheckedAll = () => {
         setIsCheck(list.map(li => li.id));
         if (isCheckAll) {
             setIsCheck([]);
+            setCount(count -3)
         }
+        setCount(count + 3)
     };
 
     const handleSelectAll1 = e => {
@@ -39,7 +41,11 @@ const CheckedAll = () => {
         setIsCheck1(secList.map(li => li.id));
         if (isCheckAll1) {
             setIsCheck1([]);
+            setCount(count - 5)
         }
+        else(
+            setCount(count + 5)
+        )
     };
 
     const handleClick = e => {
@@ -47,7 +53,7 @@ const CheckedAll = () => {
         setIsCheck([...isCheck, id]);
         if (!checked) {
             setIsCheck(isCheck.filter(item => item !== id));
-            setCount(count + 0)
+            setCount(count - 1)
         }
         else(
             setCount(count + 1)
@@ -59,7 +65,7 @@ const CheckedAll = () => {
         setIsCheck1([...isCheck1, id]);
         if (!checked) {
             setIsCheck1(isCheck1.filter(item => item !== id));
-            setCount(count + 0)
+            setCount(count - 1)
         }
         else(
             setCount(count + 1)
